@@ -1,5 +1,5 @@
 {
-  "name": "cap-metro",
+  "name": "cap-metrocket",
   "version": "1.0.0",
   "description": "WebSocket implementation of Cap Metro's realtime tracker",
   "main": "lib/server.js",
@@ -19,8 +19,7 @@
     "ava": "^0.23.0",
     "chokidar-cli": "^1.2.0",
     "precommit-hook": "^3.0.0",
-    "semistandard": "^11.0.0",
-    "standard": "^10.0.3"
+    "semistandard": "^11.0.0"
   },
   "dependencies": {
     "got": "^7.1.0",
@@ -31,9 +30,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:chrisbodhi/cap-metro.git"
+    "url": "git@github.com:chrisbodhi/cap-metrocket.git"
   },
   "engines": {
-    "node": "8.4.0"
+    "node": "8.9.0"
   }
 }
