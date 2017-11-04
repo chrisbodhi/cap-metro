@@ -10,9 +10,6 @@
     "test": "ava",
     "validate": "npm ls"
   },
-  "keywords": [],
-  "author": "Chris Boette <cboette@gmail.com> (https://newschematic.org)",
-  "license": "MIT",
   "pre-commit": [
     "lint",
     "validate",
@@ -26,6 +23,17 @@
     "standard": "^10.0.3"
   },
   "dependencies": {
+    "got": "^7.1.0",
     "ws": "^3.3.0"
+  },
+  "keywords": [],
+  "author": "Chris Boette <cboette@gmail.com> (https://newschematic.org)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chrisbodhi/cap-metro.git"
+  },
+  "engines": {
+    "node": "8.4.0"
   }
 }
