@@ -1,0 +1,30 @@
+{
+  "name": "cap-metro",
+  "version": "1.0.0",
+  "description": "WebSocket implementation of Cap Metro's realtime tracker",
+  "main": "lib/server.js",
+  "scripts": {
+    "dev": "chokidar '**/*.js' -c 'semistandard && ava'",
+    "lint": "jshint .",
+    "test": "ava",
+    "validate": "npm ls"
+  },
+  "keywords": [],
+  "author": "Chris Boette <cboette@gmail.com> (https://newschematic.org)",
+  "license": "MIT",
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
+  "devDependencies": {
+    "ava": "^0.23.0",
+    "chokidar-cli": "^1.2.0",
+    "precommit-hook": "^3.0.0",
+    "semistandard": "^11.0.0",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "ws": "^3.3.0"
+  }
+}
