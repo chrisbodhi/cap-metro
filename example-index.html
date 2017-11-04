@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+      <title>WebSocket Example</title>
+  </head>
+  <body>
+      <pre id="fileData"></pre>
+      <script type="text/javascript">
+          (function() {
+              const data = document.getElementById("fileData");
+              const conn = new WebSocket("ws://localhost:8080");
+              conn.onclose = (evt) => {
+                  data.textContent = 'Connection closed';
+              }
+              conn.onmessage = (evt) => {
+                  console.log(JSON.parse(evt.data));
+                  data.textContent = evt.data;
+              }
+          })();
+      </script>
+  </body>
+</html>

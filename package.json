@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "chokidar '**/*.js' -c 'semistandard && ava'",
     "lint": "jshint .",
+    "start": "node lib/server.js",
     "test": "ava",
     "validate": "npm ls"
   },
