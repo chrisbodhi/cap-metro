@@ -7,10 +7,17 @@
 - Clone repo.
 - Run `npm install`.
 - To start the server locally on port 8080, run `npm start` from the project root.
-- To test the WebSocket call, open `example-index.html` in your browser. You should see data related to the 7 and 10 bus lines in your browser window and browser console.
+- To test the WebSocket call, start the server and navigate to the [example](localhost:8080/example) page in your browser. You should see data related to the 7 and 550 lines in both your browser window and browser console.
 - Visit [localhost:8080](localhost:8080) for more information about the service.
 - Tests are written with [Ava](https://github.com/ava/ava). Before adding unit tests, make sure you aren't just exercising module code or third-party libraries.
-- Committing will run a series of checks before completing including linting & tests.
+- Committing will run a series of checks before completing, including linting & testing.
+
+### Deploying
+
+- Get your changes into the `master` branch. NB: the branch is protected, so no force-pushing.
+- Log into Heroku from the command line: `heroku login`.
+- Deploy with `npm run deploy` from `master`. To deploy changes from another branch, run `git push heroku OTHER-BRANCH:master`.
+- Inspect the server response with `heroku logs --tail`.
 
 ## 🚌  Roadmap 🚌
 
@@ -19,12 +26,11 @@
 - [x] Repeat call to CapMetro every x seconds, sending fresh data to client: [branch](https://github.com/chrisbodhi/cap-metrocket/tree/call-cap-metro)
 - [x] Add Express server for getting query params + responding to static HTTP requests: [branch](https://github.com/chrisbodhi/cap-metrocket/tree/add-express-server)
 - [x] Filter data returned by route number. [branch](https://github.com/chrisbodhi/cap-metrocket/tree/filter-response)
-- [ ] Deploy to server on Heroku.
+- [x] Deploy to server on Heroku. [branch](https://github.com/chrisbodhi/cap-metrocket/tree/deploy-to-heroku)
 
 ## Working with the Service
 
-
-For the 7 and 10 bus lines, and 550 train line when it's not running.
+For the 7 and 10 bus lines, and 550 train line (example response recorded when 550 was not running).
 
 _Abbreviated Client Code_
 
