@@ -7,7 +7,7 @@
       <script type="text/javascript">
           (function() {
               const data = document.getElementById("fileData");
-              const conn = new WebSocket("ws://localhost:8080");
+              const conn = new WebSocket("ws://localhost:8080?uno=dos");
               conn.onclose = (evt) => {
                   data.textContent = 'Connection closed';
               }
