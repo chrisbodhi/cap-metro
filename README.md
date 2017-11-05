@@ -12,6 +12,13 @@
 - Tests are written with [Ava](https://github.com/ava/ava). Before adding unit tests, make sure you aren't just exercising module code or third-party libraries.
 - Committing will run a series of checks before completing including linting & tests.
 
+### Deploying
+
+- Get your changes into the `master` branch. NB: the branch is protected, so no force-pushing.
+- Log into Heroku from the command line: `heroku login`.
+- Deploy with `git push heroku master`.
+- Inspect the server response with `heroku logs --tail`.
+
 ## 🚌  Roadmap 🚌
 
 - [x] Socket connection serving static JSON: [branch](https://github.com/chrisbodhi/cap-metrocket/tree/implement-ws)
