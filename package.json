@@ -2,12 +2,12 @@
   "name": "cap-metrocket",
   "version": "1.0.0",
   "description": "WebSocket implementation of Cap Metro's realtime tracker",
-  "main": "lib/server.js",
+  "main": "index.js",
   "scripts": {
-    "deploy": "git push heroku master",
+    "deploy": "git push heroku master && heroku ps:scale web=1",
     "dev": "chokidar '**/*.js' -c 'semistandard && ava'",
     "lint": "jshint .",
-    "start": "node lib/server.js",
+    "start": "node index.js",
     "test": "ava",
     "validate": "npm ls"
   },
