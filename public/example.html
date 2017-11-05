@@ -3,17 +3,22 @@
       <title>WebSocket Example</title>
   </head>
   <body>
+      <h2>
+          Data for the 7 &amp; 550 Lines
+      </h2>
+      <hr />
       <pre id="fileData"></pre>
       <script type="text/javascript">
           (function() {
+              const HOST = location.origin.replace(/^http/, 'ws');
               const data = document.getElementById("fileData");
-              const conn = new WebSocket("ws://sheltered-waters-58907.herokuapp.com/?routes=7,10,550");
+              const conn = new WebSocket(HOST + "?routes=7,550");
               conn.onclose = (evt) => {
                   data.textContent = 'Connection closed';
               }
               conn.onmessage = (evt) => {
                   console.log(JSON.parse(evt.data));
-                  data.textContent = evt.data;
+                  data.textContent = JSON.stringify(JSON.parse(evt.data), null, 2);
               }
           })();
       </script>
