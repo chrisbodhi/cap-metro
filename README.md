@@ -16,7 +16,7 @@
 
 - Get your changes into the `master` branch. NB: the branch is protected, so no force-pushing.
 - Log into Heroku from the command line: `heroku login`.
-- Deploy with `git push heroku master`.
+- Deploy with `npm run deploy`.
 - Inspect the server response with `heroku logs --tail`.
 
 ## 🚌  Roadmap 🚌

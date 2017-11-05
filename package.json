@@ -4,6 +4,7 @@
   "description": "WebSocket implementation of Cap Metro's realtime tracker",
   "main": "lib/server.js",
   "scripts": {
+    "deploy": "git push heroku master",
     "dev": "chokidar '**/*.js' -c 'semistandard && ava'",
     "lint": "jshint .",
     "start": "node lib/server.js",
