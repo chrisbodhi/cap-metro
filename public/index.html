@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <h1>
+    CapMetrocket
+  </h1>
+  <h2>
+    Instructions for Using This Thing
+  </h2>
+  <p>
+    WebSockets are cool, yeah? So is taking public transportation.
+  </p>
+  <p>
+    To connect to the service here and get realtime positional updates for your favorite bus (let's go with the 💯), simply connect from your client and parse the JSON string response:
+    <pre>
+      const conn = new WebSocket("ws://cap-metrocket.org?route=100");
+      conn.onmessage = (evt) => {
+          console.log(JSON.parse(evt.data));
+      }
+    </pre>
+  </p>
+
+  <h4>
+    Query Params
+  </h4>
+  <p>
+    The service takes one of two query params:
+  </p>
+  <ul>
+    <li><em>route</em>: a single number, e.g. <em>ws://cap-metrocket.org?route=100</em></li>
+    <li><em>routes</em>: comma-separated numbers, e.g. <em>ws://cap-metrocket.org?routes=1,10,100</em></li>
+  </ul>
+  <p>
+    If you pass in both, you only get the <em>routes</em> back. Sorry.
+  </p>
+
+  <h4>
+    Response
+  </h4>
+  <p>
+    The service will respond with some stringified JSON, wherein the route number will the key in the object (in string format) and the corresponding value will be an array, looking something like this:
+  </p>
+  <pre>
+    [
+      {
+        "trip": {
+          "trip_id": "1832275",
+          "start_time": "12:55:00",
+          "start_date": "20171105",
+          "schedule_relationship": 0,
+          "route_id": "100"
+        },
+        "position": {
+          "latitude": 30.27339,
+          "longitude": -97.74345,
+          "bearing": 15,
+          "odometer": 0,
+          "speed": 7.59968
+        },
+        "current_stop_sequence": 0,
+        "current_status": 2,
+        "timestamp": 1509911145,
+        "congestion_level": 0,
+        "stop_id": "864",
+        "vehicle": {
+          "id": "2061",
+          "label": "2061",
+          "license_plate": " "
+        }
+      },
+      ...
+    ]
+  </pre>
+  <p>
+    Each object contains information about one bus or train traveling the route specified in the query.
+  </p>
+
+  <hr />
+
+  <footer>
+    <em>
+      A weekend project, in no way associated with CapMetro
+    </em>
+    <p>
+      Thanks for taking a look! If you come across any issues, please file them <a href="https://github.com/chrisbodhi/cap-metrocket/issues">on Github</a>.
+    </p>
+  </footer>
+</html>
